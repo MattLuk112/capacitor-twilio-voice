@@ -8,6 +8,7 @@ def capacitor_pods
 end
 
 target 'Plugin' do
+  pod 'TwilioVoice', '~> 6.2.0'
   capacitor_pods
 end
 

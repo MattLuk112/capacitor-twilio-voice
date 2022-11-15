@@ -1,10 +1,18 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { TwilioVoicePlugin } from './definitions';
+import type { DeliveredNotifications, TwilioVoicePlugin } from './definitions';
 
 export class TwilioVoiceWeb extends WebPlugin implements TwilioVoicePlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
+  async registerTwilio(options: {
+    accessToken: string;
+    registrationToken: string;
+  }): Promise<any> {
+    console.log('REGISTER', options);
     return options;
+  }
+
+  async register(): Promise<void> {
+    console.log('Register push');
+    return;
   }
 }
