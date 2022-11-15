@@ -1,6 +1,6 @@
 # capacitor-twilio-voice
 
-Capacitor plugin for using Twilio Voice SDK on Android and iOS
+Capacitor plugin for FCM push notifications and voice calls using Twilio Voice SDK on Android and iOS
 
 ## Install
 
@@ -13,20 +13,20 @@ npx cap sync
 
 <docgen-index>
 
-* [`registerTwilio(...)`](#registertwilio)
-* [`register()`](#register)
-* [`checkPermissions()`](#checkpermissions)
-* [`requestPermissions()`](#requestpermissions)
-* [`addListener('registration', ...)`](#addlistenerregistration)
-* [`addListener('registrationError', ...)`](#addlistenerregistrationerror)
-* [`addListener('pushNotificationReceived', ...)`](#addlistenerpushnotificationreceived)
-* [`addListener('pushNotificationActionPerformed', ...)`](#addlistenerpushnotificationactionperformed)
-* [`addListener('twilioRegistration', ...)`](#addlistenertwilioregistration)
-* [`addListener('twilioRegistration', ...)`](#addlistenertwilioregistration)
-* [`addListener('twilioRegistrationError', ...)`](#addlistenertwilioregistrationerror)
-* [`removeAllListeners()`](#removealllisteners)
-* [Interfaces](#interfaces)
-* [Type Aliases](#type-aliases)
+- [`registerTwilio(...)`](#registertwilio)
+- [`register()`](#register)
+- [`checkPermissions()`](#checkpermissions)
+- [`requestPermissions()`](#requestpermissions)
+- [`addListener('registration', ...)`](#addlistenerregistration)
+- [`addListener('registrationError', ...)`](#addlistenerregistrationerror)
+- [`addListener('pushNotificationReceived', ...)`](#addlistenerpushnotificationreceived)
+- [`addListener('pushNotificationActionPerformed', ...)`](#addlistenerpushnotificationactionperformed)
+- [`addListener('twilioRegistration', ...)`](#addlistenertwilioregistration)
+- [`addListener('twilioRegistration', ...)`](#addlistenertwilioregistration)
+- [`addListener('twilioRegistrationError', ...)`](#addlistenertwilioregistrationerror)
+- [`removeAllListeners()`](#removealllisteners)
+- [Interfaces](#interfaces)
+- [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -43,8 +43,7 @@ registerTwilio(options: { accessToken: string; registrationToken: string; userId
 | ------------- | ----------------------------------------------------------------------------------------------------- |
 | **`options`** | <code>{ accessToken: string; registrationToken: string; userId: string; windowToken: string; }</code> |
 
---------------------
-
+---
 
 ### register()
 
@@ -60,8 +59,7 @@ notification permissions, use `requestPermissions()` first.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### checkPermissions()
 
@@ -79,8 +77,7 @@ to display notifications, use local-notifications plugin.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### requestPermissions()
 
@@ -102,8 +99,7 @@ the permission without prompting again.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### addListener('registration', ...)
 
@@ -124,8 +120,7 @@ Provides the push notification token.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### addListener('registrationError', ...)
 
@@ -146,8 +141,7 @@ Provides an error with the registration problem.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### addListener('pushNotificationReceived', ...)
 
@@ -166,8 +160,7 @@ Called when the device receives a push notification.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### addListener('pushNotificationActionPerformed', ...)
 
@@ -186,8 +179,7 @@ Called when an action is performed on a push notification.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### addListener('twilioRegistration', ...)
 
@@ -204,8 +196,7 @@ Called when the twilio registration finishes without problems.
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### addListener('twilioRegistration', ...)
 
@@ -224,8 +215,7 @@ Provides the fcm notification token.
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### addListener('twilioRegistrationError', ...)
 
@@ -244,8 +234,7 @@ Provides an error with the registration problem.
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
---------------------
-
+---
 
 ### removeAllListeners()
 
@@ -257,11 +246,9 @@ Remove all native listeners for this plugin.
 
 **Since:** 1.0.0
 
---------------------
-
+---
 
 ### Interfaces
-
 
 #### PermissionStatus
 
@@ -269,13 +256,11 @@ Remove all native listeners for this plugin.
 | ------------- | ----------------------------------------------------------- | -------------------------------------------- | ----- |
 | **`receive`** | <code><a href="#permissionstate">PermissionState</a></code> | Permission state of receiving notifications. | 1.0.0 |
 
-
 #### PluginListenerHandle
 
 | Prop         | Type                                      |
 | ------------ | ----------------------------------------- |
 | **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
-
 
 #### Token
 
@@ -283,13 +268,11 @@ Remove all native listeners for this plugin.
 | ----------- | ------------------- | ------------------------------------------------------------------------ | ----- |
 | **`value`** | <code>string</code> | On iOS it contains the APNS token. On Android it contains the FCM token. | 1.0.0 |
 
-
 #### RegistrationError
 
 | Prop        | Type                | Description                                        | Since |
 | ----------- | ------------------- | -------------------------------------------------- | ----- |
 | **`error`** | <code>string</code> | Error message describing the registration failure. | 4.0.0 |
-
 
 #### PushNotificationSchema
 
@@ -308,7 +291,6 @@ Remove all native listeners for this plugin.
 | **`group`**        | <code>string</code>  | Set the group identifier for notification grouping. Only available on Android. Works like `threadIdentifier` on iOS. | 1.0.0 |
 | **`groupSummary`** | <code>boolean</code> | Designate this notification as the summary for an associated `group`. Only available on Android.                     | 1.0.0 |
 
-
 #### ActionPerformed
 
 | Prop               | Type                                                                      | Description                                                     | Since |
@@ -317,9 +299,7 @@ Remove all native listeners for this plugin.
 | **`inputValue`**   | <code>string</code>                                                       | Text entered on the notification action. Only available on iOS. | 1.0.0 |
 | **`notification`** | <code><a href="#pushnotificationschema">PushNotificationSchema</a></code> | The notification in which the action was performed.             | 1.0.0 |
 
-
 ### Type Aliases
-
 
 #### PermissionState
 
