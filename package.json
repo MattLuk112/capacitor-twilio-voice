@@ -1,7 +1,7 @@
 {
   "name": "capacitor-twilio-voice",
   "version": "0.0.1",
-  "description": "Capacitor plugin for using Twilio Voice SDK on Android and iOS",
+  "description": "Capacitor plugin for FCM push notifications and voice calls using Twilio Voice SDK on Android and iOS",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
